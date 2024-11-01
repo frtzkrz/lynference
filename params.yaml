@@ -23,7 +23,7 @@ graph:
   tumor:
     primary: [I, II, III, IV, V, VI, VII]
   lnl:
-    I: [II]
+    I: []
     II: [III]
     III: [IV]
     IV: [V]
