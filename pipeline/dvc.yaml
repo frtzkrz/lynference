@@ -9,13 +9,11 @@ stages:
     - output: data/joined.csv
     cmd: >
       lyscripts data join
-      --inputs data/2021-usz-oropharynx.csv data/2021-clb-oropharynx.csv data/2023-isb-multisite.csv data/2023-clb-multisite.csv
+      --inputs data/umcg.csv data/usz.csv
       --output ${output}
     deps:
-    - data/2021-usz-oropharynx.csv
-    - data/2021-clb-oropharynx.csv
-    - data/2023-isb-multisite.csv
-    - data/2023-clb-multisite.csv
+    - data/usz.csv
+    - data/umcg.csv
     outs:
     - ${output}
 
@@ -46,6 +44,7 @@ stages:
       python scripts/filter.py
       --input data/enhanced.csv
       --output data/filtered.csv
+      --location ${general.location}
     deps:
       - scripts/filter.py
       - data/enhanced.csv

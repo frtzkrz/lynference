@@ -7,20 +7,17 @@ general:
   prevalences: models/prevalences.hdf5
   metrics: metrics.json
   plots_dir: plots
+  location: hypopharynx
 
 ########################################################################################
 # This dictionary defines which LNLs are present in the
 # graph and how they are connected.
 graph:
   tumor:
-    primary: [I, II, III, IV, V, VII]
+    primary: [II, III]
   lnl:
-    I: []
-    II: []
-    III: [IV]
-    IV: []
-    V: []
-    VII: []
+    II: [III]
+    III: []
 
 ########################################################################################
 # Below are some parameters necessary for the model setup:
