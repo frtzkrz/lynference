@@ -6,8 +6,8 @@ stages:
     outs:
     - path: dag.md
       hash: md5
-      md5: 02187229b504062ed9ef9249df8dea08
-      size: 691
+      md5: f7262a0460302ff40c72b3de541054fc
+      size: 381
   mermaid-png:
     cmd: ./node_modules/.bin/mmdc -i dag.md -o dag.png && mv dag-1.png dag.png
     deps:
