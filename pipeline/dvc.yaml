@@ -78,6 +78,7 @@ stages:
       lyscripts sample ${general.data} ${general.samples}
       --plots ${general.plots_dir}/sampling
       --ti
+      --pools 4
       ${inference_modalities}
     deps:
     - ${general.data}
