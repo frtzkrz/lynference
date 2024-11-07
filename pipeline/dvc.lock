@@ -95,9 +95,9 @@ stages:
             I: []
             II:
             - III
-            - V
             III:
             - IV
+            - V
             IV: []
             V: []
             VI: []
@@ -216,16 +216,16 @@ stages:
     outs:
     - path: models/samples.hdf5
       hash: md5
-      md5: dc86b90dd9b229e4a5054422a7c57b0b
+      md5: 78d7c76c97338c46521bdf21e30c9803
       size: 202769624
     - path: plots/sampling/accept_rates.csv
       hash: md5
-      md5: cac0f4b1ff036cca0708f4b4889f75c0
-      size: 2469
+      md5: 1a74827683c03cfe0317a09355ad8a52
+      size: 2477
     - path: plots/sampling/acor_times.csv
       hash: md5
-      md5: ee27bc7f5a96ee6fc9ff5eeb09ff8aea
-      size: 2445
+      md5: 0126931489835d2852bdfa25fbd024a6
+      size: 2451
   predict-risks:
     cmd: "lyscripts predict risks models/samples.hdf5 models/risks.hdf5\n"
     deps:
@@ -353,7 +353,7 @@ stages:
       size: 82927
     - path: models/samples.hdf5
       hash: md5
-      md5: dc86b90dd9b229e4a5054422a7c57b0b
+      md5: 78d7c76c97338c46521bdf21e30c9803
       size: 202769624
     params:
       params.yaml:
@@ -371,9 +371,9 @@ stages:
             I: []
             II:
             - III
-            - V
             III:
             - IV
+            - V
             IV: []
             V: []
             VI: []
@@ -492,12 +492,12 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: f8b2954d3037ee50af751f927f2bd17c
+      md5: 9332a3246d76e0bd3c55715803446e5e
       size: 158
     - path: plots/ti/accuracies.csv
       hash: md5
-      md5: 0af7c1f9e6560a1cadc619abf0799f81
-      size: 3708
+      md5: 0e4d27c663a2be25f4054732431260f9
+      size: 3706
   predict-prevalences:
     cmd: "lyscripts predict prevalences models/samples.hdf5 data/cleaned.csv models/prevalences.hdf5\n"
     deps:
@@ -591,17 +591,17 @@ stages:
     deps:
     - path: models/samples.hdf5
       hash: md5
-      md5: dc86b90dd9b229e4a5054422a7c57b0b
+      md5: 78d7c76c97338c46521bdf21e30c9803
       size: 202769624
     outs:
     - path: plots/corner.png
       hash: md5
-      md5: 4d9da6ab4c62eb560f9cf4d7a10f30ff
-      size: 1182505
+      md5: f88720bc4f58e61d03c9e9f31d123a0e
+      size: 1144082
     - path: plots/corner.svg
       hash: md5
-      md5: e9107dcf28daede00958cbc9ab053f0b
-      size: 5398735
+      md5: 020ec63c87c123168fd48f3aa6794f6c
+      size: 5319908
   filter:
     cmd: "python scripts/filter.py --input data/enhanced.csv --output data/filtered.csv
       --location hypopharynx\n"
