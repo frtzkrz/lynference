@@ -73,7 +73,7 @@ stages:
       size: 82927
   sampling:
     cmd: "lyscripts sample data/cleaned.csv models/samples.hdf5 --plots plots/sampling
-      --ti --modalities max_llh\n"
+      --ti --pools 7 --modalities max_llh\n"
     deps:
     - path: data/cleaned.csv
       hash: md5
@@ -94,10 +94,13 @@ stages:
           lnl:
             I: []
             II:
+            - I
             - III
+            - V
             III:
             - IV
-            IV: []
+            IV:
+            - V
             V: []
             VI: []
             VII: []
@@ -145,9 +148,9 @@ stages:
           temp_schedule:
           - 0.0
           - 1.0076210988534706e-09
-          - 3.224387516331105e-08
-          - 2.448519270213932e-07
-          - 1.031804005225953e-06
+          - 3.224387516331106e-08
+          - 2.448519270213934e-07
+          - 1.031804005225954e-06
           - 3.148815933917096e-06
           - 7.835261664684588e-06
           - 1.6935087808430282e-05
@@ -215,16 +218,16 @@ stages:
     outs:
     - path: models/samples.hdf5
       hash: md5
-      md5: 9864021a1b8859923e262cbae76f082a
-      size: 155170424
+      md5: 72f812efbbeede415858678b2d056168
+      size: 208835384
     - path: plots/sampling/accept_rates.csv
       hash: md5
-      md5: 8db9a3144677023cf88e73462a019492
-      size: 2013
+      md5: 746895e99e4e31ab849f206b32fb0b6d
+      size: 2397
     - path: plots/sampling/acor_times.csv
       hash: md5
-      md5: fe1130af1a6d2a255f7115d2e5f9a73f
-      size: 2457
+      md5: 294f48a52b48e20bb03e36660b918b4a
+      size: 2444
   predict-risks:
     cmd: "lyscripts predict risks models/samples.hdf5 models/risks.hdf5\n"
     deps:
@@ -421,7 +424,7 @@ stages:
           - 0.0
           - 1.0076210988534706e-09
           - 3.224387516331105e-08
-          - 2.448519270213933e-07
+          - 2.448519270213932e-07
           - 1.031804005225953e-06
           - 3.148815933917096e-06
           - 7.835261664684588e-06
