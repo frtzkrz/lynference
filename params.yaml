@@ -12,20 +12,13 @@ general:
 ########################################################################################
 # This dictionary defines which LNLs are present in the
 # graph and how they are connected.
-# graph:
-#   tumor:
-#     primary: [II, IV]
-#   lnl:
-#     II: [IV]
-#     IV: []
-
 graph:
   tumor:
     primary: [I, II, III, IV, V, VI, VII]
   lnl:
     I: []
-    II: [I, III, V]
-    III: [IV]
+    II: [III]
+    III: [IV, V]
     IV: [V]
     V: []
     VI: []
