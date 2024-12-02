@@ -21,15 +21,11 @@ general:
 
 graph:
   tumor:
-    primary: [I, II, III, IV, V, VI, VII]
+    primary: [II, III, IV]
   lnl:
-    I: []
-    II: [I, III, V]
+    II: [III]
     III: [IV]
-    IV: [V]
-    V: []
-    VI: []
-    VII: []
+    IV: []
 
 ########################################################################################
 # Below are some parameters necessary for the model setup:
