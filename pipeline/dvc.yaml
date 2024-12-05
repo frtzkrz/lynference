@@ -78,7 +78,6 @@ stages:
       lyscripts sample ${general.data} ${general.samples}
       --plots ${general.plots_dir}/sampling
       --ti
-      --pools 7
       ${inference_modalities}
     deps:
     - ${general.data}
@@ -95,8 +94,8 @@ stages:
         x: x
         y: acor_times
     outs:
-    - ${general.samples}
-
+    - ${general.samples}:
+        persist: true
   evaluate:
     wdir: ..
     desc:
