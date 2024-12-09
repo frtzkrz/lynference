@@ -90,13 +90,13 @@ stages:
             - IV
             - V
           lnl:
-            I:
-            - II
+            I: []
             II:
             - III
             III:
             - IV
-            IV: []
+            IV:
+            - V
             V: []
         modalities:
           CT:
@@ -212,16 +212,16 @@ stages:
     outs:
     - path: models/samples.hdf5
       hash: md5
-      md5: 479db064c8edf822ac35834c485153d0
+      md5: 5374885cffc9a87a5dadc60a7c30ba80
       size: 143247384
     - path: plots/sampling/accept_rates.csv
       hash: md5
-      md5: edd5d1daca164df95bc4bc14431d79a9
-      size: 2470
+      md5: c90ad8ce0b8e1798adb4253724fb3ef8
+      size: 2407
     - path: plots/sampling/acor_times.csv
       hash: md5
-      md5: 6dc253d144ef8d1b07fe19c07b9fe26d
-      size: 2458
+      md5: 611ec279585dfd9b2f2aab8eef4cd831
+      size: 2465
   predict-risks:
     cmd: "lyscripts predict risks models/samples.hdf5 models/risks.hdf5\n"
     deps:
@@ -349,7 +349,7 @@ stages:
       size: 82927
     - path: models/samples.hdf5
       hash: md5
-      md5: 479db064c8edf822ac35834c485153d0
+      md5: 5374885cffc9a87a5dadc60a7c30ba80
       size: 143247384
     params:
       params.yaml:
@@ -362,13 +362,13 @@ stages:
             - IV
             - V
           lnl:
-            I:
-            - II
+            I: []
             II:
             - III
             III:
             - IV
-            IV: []
+            IV:
+            - V
             V: []
         modalities:
           CT:
@@ -484,12 +484,12 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: f51e3160524519d82cddedbc274ee675
-      size: 158
+      md5: 8be12ad5dc3418f28e2eac282b42cb9b
+      size: 156
     - path: plots/ti/accuracies.csv
       hash: md5
-      md5: c1b263b784c04fd3561fe2353cd8fb73
-      size: 3702
+      md5: 87711ccdcf31645e7dc58e9bfda10bd5
+      size: 3699
   predict-prevalences:
     cmd: "lyscripts predict prevalences models/samples.hdf5 data/cleaned.csv models/prevalences.hdf5\n"
     deps:
@@ -583,17 +583,17 @@ stages:
     deps:
     - path: models/samples.hdf5
       hash: md5
-      md5: 479db064c8edf822ac35834c485153d0
+      md5: 5374885cffc9a87a5dadc60a7c30ba80
       size: 143247384
     outs:
     - path: plots/corner.png
       hash: md5
-      md5: 05a7b653068e6b87dfdc0aabaf1c250b
-      size: 830196
+      md5: 547a5329267236afeab9afafbacdde0d
+      size: 778055
     - path: plots/corner.svg
       hash: md5
-      md5: a7ded7d828fc2bf3b78b54d24dda13bb
-      size: 3539470
+      md5: 29013927c29bd7a44572748c1ed9c4cc
+      size: 3468906
   filter:
     cmd: "python scripts/filter.py --input data/enhanced.csv --output data/filtered.csv
       --location hypopharynx\n"
